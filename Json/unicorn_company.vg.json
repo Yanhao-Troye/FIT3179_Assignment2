@@ -1,0 +1,83 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  },
+  "width": 800,
+  "height": 450,
+  "title": "Unicorn Companies Worldwide",
+  "projection": {"type": "equalEarth"},
+  "layer": [
+    {
+      "data": {"sphere": true},
+      "mark": {"type": "geoshape", "fill": "lightblue"}
+},
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/Yanhao-Troye/FIT3179_Homework-9/main/JS/ne_110m_admin_0_countries.json",  
+        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#FFFFE0",  
+        "stroke": "#cccccc"  
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/Yanhao-Troye/FIT3179_Homework-9/main/JS/world_countries.json",
+        "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+      },
+      "mark": {"type": "geoshape", "fill": null, "stroke":"#808080"}  
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/Yanhao-Troye/FIT3179_Homework-9/main/Data/unicorn_with_lat_long.csv"  
+      },
+      "transform": [
+        {
+          "filter": "datum.longitude > -180 && datum.longitude < 180 && datum.latitude > -90 && datum.latitude < 90"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "stroke": "black",  
+        "strokeWidth": 1,
+        "tooltip": {"content": "data"}
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "size": {
+          "field": "NumberOfUnicorns",  
+          "type": "quantitative",
+          "title": "Number of Unicorns",
+          "scale": {"domain": [1, 50], "range": [10, 90]}
+        },
+        "color": {
+          "field": "TotalValuation",  
+          "type": "quantitative",
+          "title": "Total Valuation (billion)",
+          "scale": {
+            "scheme": "reds",
+            "domain": [0, 500, 1000, 1500, 2000,2500],
+            "range": ["#fff5f0", "#fcbba1", "#fb6a4a", "#de2d26", "#a50f15","#941313"]
+          }
+         
+        }
+      }
+    },
+    {
+      "mark": {"type": "text", "fontSize": 10, "fontWeight": "bold", "dx": 5, "dy": -5},
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "Country"}
+      }
+    }
+    
+  ]
+  
+}

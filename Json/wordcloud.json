@@ -1,0 +1,107 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "width": 850,
+    "height": 400,
+    "padding": 0,
+  
+    "data": [
+      {
+        "name": "table",
+        "values": [
+          {"text": "Accel", "count": 64},
+          {"text": "Andreessen Horowitz", "count": 59},
+          {"text": "Tiger Global Management", "count": 56},
+          {"text": "Sequoia Capital", "count": 53},
+          {"text": "Insight Partners", "count": 53},
+          {"text": "Sequoia Capital China", "count": 48},
+          {"text": "General Catalyst", "count": 41},
+          {"text": "Lightspeed Venture Partners", "count": 40},
+          {"text": "SoftBank Group", "count": 35},
+          {"text": "Index Ventures", "count": 32},
+          {"text": "General Atlantic", "count": 31},
+          {"text": "Tencent Holdings", "count": 31},
+          {"text": "Bessemer Venture Partners", "count": 29},
+          {"text": "IDG Capital", "count": 27},
+          {"text": "Google Ventures", "count": 27},
+          {"text": "New Enterprise Associates", "count": 25},
+          {"text": "Coatue Management", "count": 24},
+          {"text": "Y Combinator", "count": 23},
+          {"text": "Sequoia Capital India", "count": 23},
+          {"text": "DST Global", "count": 22},
+          {"text": "Kleiner Perkins Caufield & Byers", "count": 22},
+          {"text": "Khosla Ventures", "count": 20},
+          {"text": "Founders Fund", "count": 19},
+          {"text": "Battery Ventures", "count": 18},
+          {"text": "Norwest Venture Partners", "count": 17},
+          {"text": "Thrive Capital", "count": 17},
+          {"text": "Qiming Venture Partners", "count": 17},
+          {"text": "GGV Capital", "count": 17},
+          {"text": "Greylock Partners", "count": 16},
+          {"text": "Goldman Sachs", "count": 16},
+          {"text": "CRV", "count": 15},
+          {"text": "Bain Capital Ventures", "count": 15},
+          {"text": "Redpoint Ventures", "count": 13},
+          {"text": "Greycroft", "count": 12},
+          {"text": "Institutional Venture Partners", "count": 12},
+          {"text": "Matrix Partners China", "count": 12},
+          {"text": "Warburg Pincus", "count": 12},
+          {"text": "Benchmark", "count": 12},
+          {"text": "Qualcomm Ventures", "count": 12},
+          {"text": "BlackRock", "count": 11},
+          {"text": "Blackstone", "count": 11},
+          {"text": "Hillhouse Capital Management", "count": 11},
+          {"text": "Global Founders Capital", "count": 11},
+          {"text": "KKR", "count": 10},
+          {"text": "Technology Crossover Ventures", "count": 10},
+          {"text": "Temasek", "count": 10},
+          {"text": "Venrock", "count": 10},
+          {"text": "Spark Capital", "count": 10},
+          {"text": "Foundation Capital", "count": 10},
+          {"text": "Ribbit Capital", "count": 10}
+        ]
+      }
+    ],
+  
+    "scales": [
+      {
+        "name": "color",
+        "type": "ordinal",
+        "domain": {"data": "table", "field": "text"},
+        "range": ["#C701FF", "#EC8E01", "#4C2020"]
+      }
+    ],
+  
+    "marks": [
+      {
+        "type": "text",
+        "from": {"data": "table"},
+        "encode": {
+          "enter": {
+            "text": {"field": "text"},
+            "align": {"value": "center"},
+            "baseline": {"value": "alphabetic"},
+            "fill": {"scale": "color", "field": "text"},
+            "tooltip": {"signal": "{'Investor name': datum.text, 'Investment quantity': datum.count}"}
+          },
+          "update": {
+            "fillOpacity": {"value": 1}
+          },
+          "hover": {
+            "fillOpacity": {"value": 0.5}
+          }
+        },
+        "transform": [
+          {
+            "type": "wordcloud",
+            "size": [800, 400],
+            "text": {"field": "text"},
+            "rotate": {"expr": "[-45, 0, 45][~~(random() * 3)]"},
+            "font": "Helvetica Neue, Arial",
+            "fontSize": {"field": "datum.count"},
+            "fontSizeRange": [12, 56],
+            "padding": 2
+          }
+        ]
+      }
+    ]
+  }

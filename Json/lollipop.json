@@ -1,0 +1,73 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 900,
+  "height": 500,
+  
+  "data": {
+    "url": "https://raw.githubusercontent.com/Yanhao-Troye/FIT3179_A2/main/Dataset/lollipop.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "width": 6,
+        "opacity": 0.8  
+      },
+      "encoding": {
+        "x": {
+          "field": "Company",
+          "type": "nominal",
+          "axis": {"labelAngle": -60, "title": "Companies"}
+        },
+        "y": {
+          "field": "Valuation",
+          "type": "quantitative",
+          "axis": {"grid": false, "title": "Valuation in Billions ($B)"},
+          "scale": {"domain": [0, 180]}
+        },
+        "color": {
+          "field": "Company",
+          "type": "nominal",
+          "scale": {
+            "domain": ["ByteDance", "SpaceX", "SHEIN", "Stripe", "Canva", "Checkout.com", "Instacart", "Databricks", "Revolut", "FTX"],
+            "range": ["#060270", "#5D9FE9", "#EFC3CA", "#8D6F64", "#FE9900", "#B36667", "#5DE2E7", "#000000", "#FFDE59", "#18350D"]
+          }
+          
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "tooltip": true,
+        "size": 400,
+        "filled": true,
+        "opacity": 0.9  
+      },
+      "encoding": {
+        "x": {
+          "field": "Company",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Valuation",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Company",
+          "type": "nominal",
+          "scale": {
+            "domain": ["ByteDance", "SpaceX", "SHEIN", "Stripe", "Canva", "Checkout.com", "Instacart", "Databricks", "Revolut", "FTX"],
+            "range": ["#060270", "#5D9FE9", "#EFC3CA", "#8D6F64", "#FE9900", "#B36667", "#5DE2E7", "#E8E8E8", "#FFDE59", "#18350D"]
+          }
+      
+        }
+      }
+    }
+  ],
+  "config": {
+    "legend": {
+    "disable": true},
+    "view": {"stroke": null}
+  }
+}
