@@ -1,0 +1,11 @@
+Company,Valuation,Date.Joined,Country,City,Industry,Select.Investors,NumberOfUnicorns,TotalValuation,latitude,longitude
+ByteDance,140.0,4/7/2017,China,Beijing,Artificial intelligence,"Sequoia Capital China, SIG Asia Investments, Sina Weibo, Softbank Group",173,672.59,35.86166,104.195397
+SpaceX,127.0,12/1/2012,United States,Hawthorne,Other,"Founders Fund, Draper Fisher Jurvetson, Rothenberg Ventures",647,2096.08,37.09024,-95.712891
+SHEIN,100.0,7/3/2018,China,Shenzhen,E-commerce & direct-to-consumer,"Tiger Global Management, Sequoia Capital China, Shunwei Capital Partners",173,672.59,35.86166,104.195397
+Stripe,95.0,1/23/2014,United States,San Francisco,Fintech,"Khosla Ventures, LowercaseCapital, capitalG",647,2096.08,37.09024,-95.712891
+Canva,40.0,1/8/2018,Australia,Surry Hills,Internet software & services,"Sequoia Capital China, Blackbird Ventures, Matrix Partners",8,55.4,-25.274398,133.775136
+Checkout.com,40.0,5/2/2019,United Kingdom,London,Fintech,"Tiger Global Management, Insight Partners, DST Global",48,210.81,55.378051,-3.435973
+Instacart,39.0,12/30/2014,United States,San Francisco,"Supply chain, logistics, & delivery","Khosla Ventures, Kleiner Perkins Caufield & Byers, Collaborative Fund",647,2096.08,37.09024,-95.712891
+Databricks,38.0,2/5/2019,United States,San Francisco,Data management & analytics,"Andreessen Horowitz, New Enterprise Associates, Battery Ventures",647,2096.08,37.09024,-95.712891
+Revolut,33.0,4/26/2018,United Kingdom,London,Fintech,"index Ventures, DST Global, Ribbit Capital",48,210.81,55.378051,-3.435973
+FTX,32.0,7/20/2021,Bahamas,,Fintech,"Sequoia Capital, Thoma Bravo, Softbank",1,32.0,25.03428,-77.39628
