@@ -147,31 +147,27 @@
 
 
  <script type="text/javascript">
-    var proportional_symbol_map = "unicorn_company.vg.json";
-    var sankey = "sankey.json";
-    var lollipop = "lollipop.json";
-    var bubble = "bubble_plot.vg.json";
-    var wordcloud = "wordcloud.json"
+    var proportional_symbol_map = "Json/unicorn_company.vg.json";
+    var sankey = "Json/sankey.json";
+    var lollipop = "Json/lollipop.json";
+    var bubble = "Json/bubble_plot.vg.json";
+    var wordcloud = "Json/wordcloud.json"
     
 
     vegaEmbed('#map', proportional_symbol_map, { "actions": false }).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
       }).catch(console.error);
+   // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 
     vegaEmbed('#sankey', sankey, { "actions": false }).then(function (result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
       }).catch(console.error);
 
     vegaEmbed('#lollipop', lollipop, { "actions": false }).then(function (result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
       }).catch(console.error);
 
     vegaEmbed('#bubble', bubble, { "actions": false }).then(function (result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
       }).catch(console.error);
 
     vegaEmbed('#wordcloud', wordcloud, { "actions": false }).then(function (result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
       }).catch(console.error);
       
   </script>
