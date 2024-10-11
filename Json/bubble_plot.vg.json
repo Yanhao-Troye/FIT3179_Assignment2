@@ -4,7 +4,7 @@
   "width": 850,
   "height": 450,
   "data": {
-    "url": "https://raw.githubusercontent.com/Yanhao-Troye/FIT3179_A2/main/Dataset/valuation_unicorn_data.csv",
+    "url": "https://raw.githubusercontent.com/Yanhao-Troye/FIT3179_Assignment2/main/Dataset/valuation_unicorn_data.csv",
     "format": {"type": "csv"}
   },
   "params": [
