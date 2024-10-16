@@ -68,15 +68,8 @@
          
         }
       }
-    },
-    {
-      "mark": {"type": "text", "fontSize": 10, "fontWeight": "bold", "dx": 5, "dy": -5},
-      "encoding": {
-        "longitude": {"field": "longitude", "type": "quantitative"},
-        "latitude": {"field": "latitude", "type": "quantitative"},
-        "text": {"field": "Country"}
-      }
     }
+    
     
   ]
   
